@@ -7,7 +7,9 @@ class AppRoutes{
   AppRoutes._();
 
   static final routes = [
+    GetPage(name: SplashScreen.routeName, page: () => const SplashScreen()),
     GetPage(name: HomeScreen.routeName, page: () => HomeScreen(),
-    binding: HomeBinding())
+    binding: HomeBinding()),
+   
   ];
 }
