@@ -36,7 +36,10 @@ class HomeScreen extends GetView<HomeController>{
         ),
         
         Obx(
-          () => SliverList(delegate: SliverChildBuilderDelegate((context, index) {
+          () {
+           
+            
+            return SliverList(delegate: SliverChildBuilderDelegate((context, index) {
           return 
             Padding(
               padding: getPadding(left: 10, right: 10, top: 10, bottom: 10),
@@ -104,7 +107,7 @@ class HomeScreen extends GetView<HomeController>{
             );
           
               },
-              childCount: controller.catBreeds.length) ),
+              childCount: controller.catBreeds.length) );}
         )]
     ),
    );
