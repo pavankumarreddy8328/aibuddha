@@ -18,10 +18,19 @@ class HomeScreen extends GetView<HomeController>{
     body: CustomScrollView(
       slivers: [
         SliverAppBar(
+          actions: [
+   IconButton(
+   onPressed: () {
+    showSearch(context: context, delegate: CustomSearchDelegate());
+   },
+   icon: const Icon(Icons.search),
+   )
+  ],
           backgroundColor: Color(0xFF020381),
+          centerTitle: true,
           title: Text("Breeds of Cats",
           style: TextStyle(
-            color: Color(0xFF444CF7)
+            color: Color(0xFF9B51E0)
           ),),
           pinned: true,
         ),
@@ -74,7 +83,10 @@ class HomeScreen extends GetView<HomeController>{
                         ),
                         onPressed: (){
 
-                          Get.to(() => MoreDetailsScreen(catBreed: controller.catBreeds[index]));
+                          Get.to(() => MoreDetailsScreen(catBreed: controller.catBreeds[index]),
+                          transition: Transition.fadeIn,
+                          curve: Curves.easeInCubic,
+                          duration: Duration(seconds: 1));
                         }, 
                       child: Text("More Details",
                       style: TextStyle(
